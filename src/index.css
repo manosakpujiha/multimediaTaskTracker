@@ -1,6 +1,89 @@
 body {
-  background-color: orange;
+  background-color: rgb(32, 30, 37);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(18, 18, 19);
+  border: 5px solid rgb(0, 255, 85);
+  border-radius: 1rem;
+  width: 60vw;
+  height: 80%;
+  padding: 5rem 2rem;
+  margin: 5rem auto;
+}
+.Header {
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 255, 85);
+}
+
+.Header h1 {
+ color: red;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(18, 18, 19);
+  color: rgb(0, 255, 85);
+  width: 100%;
+  margin: 0rem 1rem;
+  
+}
+input::placeholder, input { 
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: black;
+  color: rgb(0, 255, 85, 0.5);
+  border-radius: 1rem;
+}
+input:focus {
+  border-color: black;
+  border-width: 5px;
+}
+
+
+.btn {
+  border: 2px solid gold;
+  background-color: black;
+  border-radius: 5rem;
+  color: rgb(0, 255, 85);
+  height: 2rem;
+  width: 8rem;
+}
+
+.heading-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn:hover {
+  background-color:gold;
+  transition:background-color 2s ease-in-out;
+  color: black;
+  transition: color 2s ease-in-out;
+  border-color: black;
+  transition: border-color 2s ease-in-out;
+  border-width: 5px;
+  
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    background-color: grey;
+  }
+
+  .App {
+    width: 30rem;
+  }
+}
+

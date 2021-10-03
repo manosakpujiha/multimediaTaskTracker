@@ -1,15 +1,11 @@
 import './App.css';
-
+import Header from './components/Header';
+import Input from './components/Input';
 function App() {
   return (
     <div className="App" >
-
-      <header>
-        <h1>Task Tracker</h1>
-        <p>What can we do today brain?</p>
-      </header> 
-      
-     
+      <Header/>
+      <Input/>
     </div>
   );
 }
