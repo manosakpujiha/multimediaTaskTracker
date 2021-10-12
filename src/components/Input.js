@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import typingSound from '../static/typing2.mp3';
 
 const Input = (props) => {
   const [text, setText] = useState('');
@@ -21,7 +22,10 @@ const Input = (props) => {
         <div className = 'Input'>
 
             <label>Task</label>
-            <input type="text" placeholder = {`Task`} value = {text} onChange = {(e) => setText(e.target.value)}/>
+            <input type="text" placeholder = {`Task`} value = {text} onChange = {(e) => { 
+                let audioObj = new Audio(typingSound);
+                audioObj.play();
+                setText(e.target.value)}}/>
 
             <label>Date</label>
             <input type="text" placeholder = {`Date and time`} value = {day} onChange = {(e) => setDate(e.target.value)}/>

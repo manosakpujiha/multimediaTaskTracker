@@ -3,7 +3,10 @@ import Header from './components/Header';
 import Input from './components/Input';
 import { useState } from 'react';
 import Tasks from './components/Tasks';
-
+import deleteSound from './static/delete.mp3';
+import createSound from './static/oneup.mp3';
+let audioObj = new Audio(deleteSound);
+let createSound2 = new Audio(createSound);
 
 
 function App() {
@@ -14,7 +17,6 @@ function App() {
         text: 'eat',
         day: '30th June 1986',
         reminder: false
-
     },
     {
         id: 2,
@@ -28,32 +30,30 @@ function App() {
         text: 'rest',
         day: '28th Sept 2020',
         reminder: false
-
     }
 ] )
+
 function addTask(newTask) {
+  createSound2.play();
   let newState = [{id: state.length + 1,...newTask},...state]
   setState([...newState]);
 }
 
-
 function del(element) {
-  setState(state.filter((task) => task.id !== element));
+  audioObj.play();
+  setState(state.filter((task) => task.id !== element));  
+  audioObj.volume = 0.5;
 }
-
 
 function toggle (identity) {
     setState(state.map( (task) => task.id === identity ? {...task, reminder: !task.reminder} : task))
 }
 
-
   return (
     <div className="App">
      <Header tasks = {state} del = {del}/>
-     
       {showMenu && <Input add= {addTask}/>}
       {state.length > 0 ? <Tasks tasks={state} del = {del} toggle = {toggle}/> : 'No tasks to show'}
-            
     </div>
   );
 }
