@@ -12,6 +12,7 @@ body {
   align-items: center;
   background-color:rgb(18, 18, 19);
   border: 5px solid rgb(0, 255, 85);
+  color: rgb(0, 255, 85);
   border-radius: 1rem;
   width: 60vw;
   height: 80%;
@@ -75,25 +76,31 @@ input:focus {
   border-width: 5px;
 }
 
+.icon {
+  text-align: center;
+  align-self: center;
+  width: 10rem;
+  
+}
+
 .Task {
-  background-color: rgb(52, 24, 128);
+  background-color: rgb(13, 204, 77);
   padding-left: 1rem;
   border-radius: 1rem;
   margin: 1rem;
   display: flex;
   flex-direction: row;
-  align-items:space-between;
-
+  width: 100%;
 }
 .text {
-  background-color: rgb(249, 253, 15);
+  background-color: rgb(224, 228, 18);
+  color: black;
   width: 50%;
 }
 
 .reminder{
  color: rgb(52, 24, 128, 0.2);
  background-color: rgb(52, 24, 128, 0.2);
-
 }
 
 

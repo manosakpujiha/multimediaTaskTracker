@@ -7,6 +7,7 @@ import Tasks from './components/Tasks';
 
 
 function App() {
+  const [showMenu, setShowMenu] = useState(true)
   const [state, setState] = useState([
     {
         id: 1,
@@ -30,7 +31,10 @@ function App() {
 
     }
 ] )
-
+function addTask(newTask) {
+  let newState = [{id: state.length + 1,...newTask},...state]
+  setState([...newState]);
+}
 
 
 function del(element) {
@@ -47,7 +51,7 @@ function toggle (identity) {
     <div className="App">
      <Header tasks = {state} del = {del}/>
      
-      <Input />
+      {showMenu && <Input add= {addTask}/>}
       {state.length > 0 ? <Tasks tasks={state} del = {del} toggle = {toggle}/> : 'No tasks to show'}
             
     </div>
