@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
-import typingSound from '../static/typing2.mp3';
+import typingSound from '../static/typing4.wav';
+let audioObj = new Audio(typingSound);
 
 const Input = (props) => {
   const [text, setText] = useState('');
@@ -23,16 +24,28 @@ const Input = (props) => {
 
             <label>Task</label>
             <input type="text" placeholder = {`Task`} value = {text} onChange = {(e) => { 
-                let audioObj = new Audio(typingSound);
                 audioObj.play();
                 setText(e.target.value)}}/>
 
             <label>Date</label>
-            <input type="text" placeholder = {`Date and time`} value = {day} onChange = {(e) => setDate(e.target.value)}/>
+            <input type="text" placeholder = {`Date and time`} value = {day} onChange = {
+                (e) => {
+                    audioObj.play();
+                    setDate(e.target.value)
+                }}
+            />
             
             <label>Reminder</label>
-            <input type="checkbox" value = {reminder} onChange = {(e) => setReminder(e.currentTarget.checked)}/>
-            
+            <input 
+                type="checkbox"
+                value = {reminder} 
+                onChange = {
+                        (e) => {
+                        audioObj.play();
+                        setReminder(e.currentTarget.checked);
+                    }
+                }
+            />
             <Button margin = {'2rem'} text = {'ADD TASK'} color = {'rgb(0, 255, 85)'} func = {submit}/>
 
         </div>
