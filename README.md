@@ -1,1 +1,1 @@
-This is my test page where i practice concepts
+Testing my react skills with this Task tracker app.
